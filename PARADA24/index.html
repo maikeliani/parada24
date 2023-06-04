@@ -5,19 +5,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PARADA 24</title>
-</head>
-<body>
-    <script>
+    <style>
+        #botao{
+            width: 80px;
+            height: 80px;
+            margin: calc(50% - 40px) calc(50% - 40px);
+            border: 1px solid black;
+            margin-bottom: 30px;
+            background-color: red;
+        }
+
+        #botao:hover{
+            border: 3px solid black;
+        }
+
+        #main{            
+            margin-top: 0px;
+            margin-left: calc(50% - 60px);
+            margin-right: calc(50% - 60px);           
+            width: 120px;
+            height: 25px;         
+            font-size: 20px;
+            border:1px solid black;
+            background-color: lightblue;
+            color: red;            
+            display: flex;        
+            justify-content: center;          
+        }
+    </style>
+
+
+     <script>
     function nomeAleatorio() {
     var nomes = ['João', 'Maria', 'Pedro', 'Ana', 'Carlos', 'Laura', 'Maikel', 'Mariana', 'Gabriel', 'Bruna'];
      var indiceAleatorio = Math.floor(Math.random() * nomes.length);
      return nomes[indiceAleatorio];
-}
+    }
 
-
-var nomeSorteado = nomeAleatorio();
-console.log(nomeSorteado); 
+    function preencheSpan(){
+        var nome = nomeAleatorio();
+        document.getElementById('minha-span').innerText = nome;
+        console.log(nomeAleatorio);
+    }
 
     </script>
+</head>
+<body>
+    <button id="botao" onclick="preencheSpan()">clique aqui</button>
+    <div id="main"><span id="minha-span"></span></div>
+   
 </body>
 </html>
